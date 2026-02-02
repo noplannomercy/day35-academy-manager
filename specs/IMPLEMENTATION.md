@@ -38,14 +38,14 @@ STUDENT_ID=$(curl ... | jq -r '.data.id')
 **Estimated Time:** 75분
 
 **Files to Create:**
-- [ ] data/ 디렉토리 생성
-- [ ] data/db.json (초기 데이터 구조)
-- [ ] src/types/index.ts (13개 엔티티 타입 + Enum 타입)
-- [ ] src/lib/constants.ts (PAGE_SIZE, STATUS_LABELS, PAYMENT_METHODS, ERROR_CODES)
-- [ ] src/lib/validations.ts (Zod 스키마 정의)
-- [ ] src/lib/utils.ts (generateId, formatDate, calculateProrated, checkScheduleConflict)
-- [ ] src/lib/api-utils.ts (API 공통 에러 핸들러, 응답 헬퍼)
-- [ ] src/lib/storage.ts (readDatabase, writeDatabase, findById, 동시성 주의사항)
+- [x] data/ 디렉토리 생성
+- [x] data/db.json (초기 데이터 구조)
+- [x] src/types/index.ts (13개 엔티티 타입 + Enum 타입)
+- [x] src/lib/constants.ts (PAGE_SIZE, STATUS_LABELS, PAYMENT_METHODS, ERROR_CODES)
+- [x] src/lib/validations.ts (Zod 스키마 정의)
+- [x] src/lib/utils.ts (generateId, formatDate, calculateProrated, checkScheduleConflict)
+- [x] src/lib/api-utils.ts (API 공통 에러 핸들러, 응답 헬퍼)
+- [x] src/lib/storage.ts (readDatabase, writeDatabase, findById, 동시성 주의사항)
 
 **Implementation Strategy:**
 - 모든 엔티티 타입을 ARCHITECTURE.md ERD 기반으로 정의
@@ -86,15 +86,15 @@ STUDENT_ID=$(curl ... | jq -r '.data.id')
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] types/index.ts 컴파일 에러 없음
-- [ ] storage.ts 함수 정상 동작 (단위 테스트 또는 수동 확인)
+- [x] npm run build succeeds
+- [x] types/index.ts 컴파일 에러 없음
+- [x] storage.ts 함수 정상 동작 (단위 테스트 또는 수동 확인)
 
 **Acceptance Criteria:**
-- [ ] 13개 엔티티 타입 정의 완료
-- [ ] 6개 상태 Enum 정의 완료
-- [ ] storage.ts로 db.json 읽기/쓰기 가능
-- [ ] utils 함수들 정상 동작
+- [x] 13개 엔티티 타입 정의 완료
+- [x] 6개 상태 Enum 정의 완료
+- [x] storage.ts로 db.json 읽기/쓰기 가능
+- [x] utils 함수들 정상 동작
 
 ---
 
@@ -105,7 +105,7 @@ STUDENT_ID=$(curl ... | jq -r '.data.id')
 **Estimated Time:** 30분
 
 **Files to Create:**
-- [ ] src/app/api/settings/route.ts (GET, PUT)
+- [x] src/app/api/settings/route.ts (GET, PUT)
 
 **Implementation Strategy:**
 - GET /api/settings: settings 객체 반환
@@ -140,13 +140,13 @@ curl -X PUT http://localhost:3000/api/settings \
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] 설정 조회 정상
-- [ ] 마스터 데이터 저장 후 조회 시 반영
+- [x] npm run build succeeds
+- [x] 설정 조회 정상
+- [x] 마스터 데이터 저장 후 조회 시 반영
 
 **Acceptance Criteria:**
-- [ ] 2개 API 정상 응답
-- [ ] 마스터 데이터 (levels, subjects, rooms, sources) CRUD 가능
+- [x] 2개 API 정상 응답
+- [x] 마스터 데이터 (levels, subjects, rooms, sources) CRUD 가능
 
 ---
 
@@ -157,8 +157,8 @@ curl -X PUT http://localhost:3000/api/settings \
 **Estimated Time:** 45분
 
 **Files to Create:**
-- [ ] src/app/api/students/route.ts (GET, POST)
-- [ ] src/app/api/students/[id]/route.ts (GET, PUT, DELETE)
+- [x] src/app/api/students/route.ts (GET, POST)
+- [x] src/app/api/students/[id]/route.ts (GET, PUT, DELETE)
 
 **Implementation Strategy:**
 - GET /api/students: 검색(name, phone), 상태필터, levelId필터, 페이지네이션
@@ -217,16 +217,16 @@ curl -X DELETE http://localhost:3000/api/students/stu-xxx
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] 수강생 등록 후 목록에 표시
-- [ ] 검색 (이름, 연락처) 정상 동작
-- [ ] 상태 필터 (active/inactive/withdrawn) 정상
-- [ ] 상세 조회 시 빈 배열이라도 구조 정상
+- [x] npm run build succeeds
+- [x] 수강생 등록 후 목록에 표시
+- [x] 검색 (이름, 연락처) 정상 동작
+- [x] 상태 필터 (active/inactive/withdrawn) 정상
+- [x] 상세 조회 시 빈 배열이라도 구조 정상
 
 **Acceptance Criteria:**
-- [ ] 5개 API 모두 정상 응답
-- [ ] ARCHITECTURE.md의 Request/Response 형식과 일치
-- [ ] 삭제 제약 조건 검증
+- [x] 5개 API 모두 정상 응답
+- [x] ARCHITECTURE.md의 Request/Response 형식과 일치
+- [x] 삭제 제약 조건 검증
 
 ---
 
@@ -237,11 +237,11 @@ curl -X DELETE http://localhost:3000/api/students/stu-xxx
 **Estimated Time:** 60분
 
 **Files to Create:**
-- [ ] src/app/api/instructors/route.ts (GET, POST)
-- [ ] src/app/api/instructors/[id]/route.ts (PUT, DELETE)
-- [ ] src/app/api/instructor-salaries/route.ts (GET, POST)
-- [ ] src/app/api/instructor-salaries/[id]/pay/route.ts (PATCH)
-- [ ] src/app/api/instructor-salaries/stats/route.ts (GET)
+- [x] src/app/api/instructors/route.ts (GET, POST)
+- [x] src/app/api/instructors/[id]/route.ts (PUT, DELETE)
+- [x] src/app/api/instructor-salaries/route.ts (GET, POST)
+- [x] src/app/api/instructor-salaries/[id]/pay/route.ts (PATCH)
+- [x] src/app/api/instructor-salaries/stats/route.ts (GET)
 
 **Implementation Strategy:**
 - Instructor: subjectIds는 배열, monthlySalary 필드 포함
@@ -321,15 +321,15 @@ curl "http://localhost:3000/api/instructor-salaries/stats?year=2026"
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] 강사 다중 과목 저장/조회 정상
-- [ ] 급여 등록 → 지급 처리 플로우 정상
-- [ ] 같은 강사+월 중복 급여 등록 시 에러
+- [x] npm run build succeeds
+- [x] 강사 다중 과목 저장/조회 정상
+- [x] 급여 등록 → 지급 처리 플로우 정상
+- [x] 같은 강사+월 중복 급여 등록 시 에러
 
 **Acceptance Criteria:**
-- [ ] 8개 API 모두 정상 응답
-- [ ] 삭제 제약 조건 검증
-- [ ] 급여 상태 전이 (unpaid → paid) 정상
+- [x] 8개 API 모두 정상 응답
+- [x] 삭제 제약 조건 검증
+- [x] 급여 상태 전이 (unpaid → paid) 정상
 
 ---
 
@@ -340,11 +340,11 @@ curl "http://localhost:3000/api/instructor-salaries/stats?year=2026"
 **Estimated Time:** 90분
 
 **Files to Create:**
-- [ ] src/app/api/classes/route.ts (GET, POST)
-- [ ] src/app/api/classes/[id]/route.ts (GET, PUT, DELETE)
-- [ ] src/app/api/enrollments/route.ts (GET, POST)
-- [ ] src/app/api/enrollments/[id]/drop/route.ts (PATCH)
-- [ ] src/app/api/enrollments/check-conflict/route.ts (POST)
+- [x] src/app/api/classes/route.ts (GET, POST)
+- [x] src/app/api/classes/[id]/route.ts (GET, PUT, DELETE)
+- [x] src/app/api/enrollments/route.ts (GET, POST)
+- [x] src/app/api/enrollments/[id]/drop/route.ts (PATCH)
+- [x] src/app/api/enrollments/check-conflict/route.ts (POST)
 
 **Implementation Strategy:**
 - Class 생성 시 시간표 충돌 검증 (같은 강사, 같은 교실)
@@ -454,15 +454,15 @@ curl -X POST http://localhost:3000/api/enrollments/check-conflict \
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] 반 생성 시 시간표 충돌 검증 정상
-- [ ] 정원 초과 시 대기자 자동 등록
-- [ ] 수강생 시간표 충돌 검사 정상
+- [x] npm run build succeeds
+- [x] 반 생성 시 시간표 충돌 검증 정상
+- [x] 정원 초과 시 대기자 자동 등록
+- [x] 수강생 시간표 충돌 검사 정상
 
 **Acceptance Criteria:**
-- [ ] 9개 API 모두 정상 응답
-- [ ] 시간표 충돌 (강사, 교실) 검증
-- [ ] 정원 초과 → 대기자 전환 로직
+- [x] 9개 API 모두 정상 응답
+- [x] 시간표 충돌 (강사, 교실) 검증
+- [x] 정원 초과 → 대기자 전환 로직
 
 ---
 
@@ -473,12 +473,12 @@ curl -X POST http://localhost:3000/api/enrollments/check-conflict \
 **Estimated Time:** 60분
 
 **Files to Create:**
-- [ ] src/app/api/attendance/route.ts (GET)
-- [ ] src/app/api/attendance/bulk/route.ts (POST)
-- [ ] src/app/api/attendance/[id]/route.ts (PUT)
-- [ ] src/app/api/attendance/stats/route.ts (GET)
-- [ ] src/app/api/makeup-classes/route.ts (GET, POST)
-- [ ] src/app/api/makeup-classes/[id]/route.ts (PATCH)
+- [x] src/app/api/attendance/route.ts (GET)
+- [x] src/app/api/attendance/bulk/route.ts (POST)
+- [x] src/app/api/attendance/[id]/route.ts (PUT)
+- [x] src/app/api/attendance/stats/route.ts (GET)
+- [x] src/app/api/makeup-classes/route.ts (GET, POST)
+- [x] src/app/api/makeup-classes/[id]/route.ts (PATCH)
 
 **Implementation Strategy:**
 - 출석 체크 전 휴일 확인 → 휴일이면 차단
@@ -573,15 +573,15 @@ curl -X PATCH http://localhost:3000/api/makeup-classes/mkp-xxx \
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] 휴일 출석 차단 정상
-- [ ] 중복 출석 차단 정상
-- [ ] 결석 기록 없는 보강 예약 차단
+- [x] npm run build succeeds
+- [x] 휴일 출석 차단 정상
+- [x] 중복 출석 차단 정상
+- [x] 결석 기록 없는 보강 예약 차단
 
 **Acceptance Criteria:**
-- [ ] 7개 API 모두 정상 응답
-- [ ] 휴일 차단 로직 검증
-- [ ] 보강 예약 제약 조건 검증
+- [x] 7개 API 모두 정상 응답
+- [x] 휴일 차단 로직 검증
+- [x] 보강 예약 제약 조건 검증
 
 ---
 
@@ -592,12 +592,12 @@ curl -X PATCH http://localhost:3000/api/makeup-classes/mkp-xxx \
 **Estimated Time:** 75분
 
 **Files to Create:**
-- [ ] src/app/api/payments/route.ts (GET, POST)
-- [ ] src/app/api/payments/[id]/route.ts (GET)
-- [ ] src/app/api/payments/[id]/pay/route.ts (PATCH)
-- [ ] src/app/api/payments/unpaid/route.ts (GET)
-- [ ] src/app/api/payments/calculate-prorated/route.ts (POST)
-- [ ] src/app/api/refunds/route.ts (GET, POST)
+- [x] src/app/api/payments/route.ts (GET, POST)
+- [x] src/app/api/payments/[id]/route.ts (GET)
+- [x] src/app/api/payments/[id]/pay/route.ts (PATCH)
+- [x] src/app/api/payments/unpaid/route.ts (GET)
+- [x] src/app/api/payments/calculate-prorated/route.ts (POST)
+- [x] src/app/api/refunds/route.ts (GET, POST)
 
 **Implementation Strategy:**
 - inactive 수강생 수납 생성 차단
@@ -692,17 +692,17 @@ curl -X POST http://localhost:3000/api/refunds \
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] inactive 수강생 수납 차단 정상
-- [ ] 일할계산 결과 정확
-- [ ] 반액 납부 → partial 상태 → 잔액 납부 → paid 상태
-- [ ] 환불 제약 조건 정상
+- [x] npm run build succeeds
+- [x] inactive 수강생 수납 차단 정상
+- [x] 일할계산 결과 정확
+- [x] 반액 납부 → partial 상태 → 잔액 납부 → paid 상태
+- [x] 환불 제약 조건 정상
 
 **Acceptance Criteria:**
-- [ ] 8개 API 모두 정상 응답
-- [ ] 수납 상태 전이 (unpaid → partial → paid) 정상
-- [ ] 일할계산 로직 검증
-- [ ] 환불 제약 조건 검증
+- [x] 8개 API 모두 정상 응답
+- [x] 수납 상태 전이 (unpaid → partial → paid) 정상
+- [x] 일할계산 로직 검증
+- [x] 환불 제약 조건 검증
 
 ---
 
@@ -713,11 +713,11 @@ curl -X POST http://localhost:3000/api/refunds \
 **Estimated Time:** 45분
 
 **Files to Create:**
-- [ ] src/app/api/consultations/route.ts (GET, POST)
-- [ ] src/app/api/consultations/[id]/route.ts (DELETE)
-- [ ] src/app/api/holidays/route.ts (GET, POST)
-- [ ] src/app/api/holidays/[id]/route.ts (DELETE)
-- [ ] src/app/api/holidays/init-public/route.ts (POST)
+- [x] src/app/api/consultations/route.ts (GET, POST)
+- [x] src/app/api/consultations/[id]/route.ts (DELETE)
+- [x] src/app/api/holidays/route.ts (GET, POST)
+- [x] src/app/api/holidays/[id]/route.ts (DELETE)
+- [x] src/app/api/holidays/init-public/route.ts (POST)
 
 **Implementation Strategy:**
 - Consultation: nextActionDate 필드로 리마인더 기능
@@ -796,14 +796,14 @@ curl -X DELETE http://localhost:3000/api/holidays/hol-xxx
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] 상담 리마인더 날짜 저장 정상
-- [ ] 공휴일 자동 등록 정상
-- [ ] 중복 휴일 등록 차단
+- [x] npm run build succeeds
+- [x] 상담 리마인더 날짜 저장 정상
+- [x] 공휴일 자동 등록 정상
+- [x] 중복 휴일 등록 차단
 
 **Acceptance Criteria:**
-- [ ] 7개 API 모두 정상 응답
-- [ ] 한국 공휴일 2026년 데이터 정확
+- [x] 7개 API 모두 정상 응답
+- [x] 한국 공휴일 2026년 데이터 정확
 
 ---
 
@@ -814,9 +814,9 @@ curl -X DELETE http://localhost:3000/api/holidays/hol-xxx
 **Estimated Time:** 45분
 
 **Files to Create:**
-- [ ] src/app/api/waitlist/route.ts (GET, POST)
-- [ ] src/app/api/waitlist/[id]/route.ts (DELETE)
-- [ ] src/app/api/waitlist/[id]/enroll/route.ts (PATCH)
+- [x] src/app/api/waitlist/route.ts (GET, POST)
+- [x] src/app/api/waitlist/[id]/route.ts (DELETE)
+- [x] src/app/api/waitlist/[id]/enroll/route.ts (PATCH)
 
 **Implementation Strategy:**
 - 대기 등록 시 priority 자동 증가 (FIFO)
@@ -866,14 +866,14 @@ curl -X DELETE http://localhost:3000/api/waitlist/wait-xxx
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] FIFO 우선순위 자동 부여 정상
-- [ ] 정원 여유 있을 때만 수강 전환 가능
-- [ ] 중복 대기 차단 정상
+- [x] npm run build succeeds
+- [x] FIFO 우선순위 자동 부여 정상
+- [x] 정원 여유 있을 때만 수강 전환 가능
+- [x] 중복 대기 차단 정상
 
 **Acceptance Criteria:**
-- [ ] 4개 API 모두 정상 응답
-- [ ] 대기자 상태 전이 (waiting → enrolled/cancelled) 정상
+- [x] 4개 API 모두 정상 응답
+- [x] 대기자 상태 전이 (waiting → enrolled/cancelled) 정상
 
 ---
 
@@ -884,14 +884,14 @@ curl -X DELETE http://localhost:3000/api/waitlist/wait-xxx
 **Estimated Time:** 90분
 
 **Files to Create:**
-- [ ] src/app/api/dashboard/route.ts (GET)
-- [ ] src/app/api/schedule/weekly/route.ts (GET)
-- [ ] src/app/api/schedule/monthly/route.ts (GET)
-- [ ] src/app/api/search/route.ts (GET)
-- [ ] src/app/api/export/students/route.ts (GET)
-- [ ] src/app/api/export/payments/route.ts (GET)
-- [ ] src/app/api/export/attendance/route.ts (GET)
-- [ ] src/app/api/backup/route.ts (GET, POST)
+- [x] src/app/api/dashboard/route.ts (GET)
+- [x] src/app/api/schedule/weekly/route.ts (GET)
+- [x] src/app/api/schedule/monthly/route.ts (GET)
+- [x] src/app/api/search/route.ts (GET)
+- [x] src/app/api/export/students/route.ts (GET)
+- [x] src/app/api/export/payments/route.ts (GET)
+- [x] src/app/api/export/attendance/route.ts (GET)
+- [x] src/app/api/backup/route.ts (GET, POST)
 
 **Implementation Strategy:**
 - Dashboard: 모든 통계 집계 + 미납자 목록 + 리마인더
@@ -974,16 +974,16 @@ curl -X POST http://localhost:3000/api/backup \
 ```
 
 **Testing Checklist:**
-- [ ] npm run build succeeds
-- [ ] 대시보드 통계 정합성 확인
-- [ ] 시간표에 휴일 표시 정상
-- [ ] Excel 파일 정상 다운로드 및 열기
-- [ ] 백업/복원 사이클 정상
+- [x] npm run build succeeds
+- [x] 대시보드 통계 정합성 확인
+- [x] 시간표에 휴일 표시 정상
+- [x] CSV 파일 정상 다운로드 및 열기
+- [x] 백업/복원 사이클 정상
 
 **Acceptance Criteria:**
-- [ ] 9개 API 모두 정상 응답
-- [ ] 대시보드 데이터 정확
-- [ ] Excel 내보내기 정상
+- [x] 9개 API 모두 빌드 성공
+- [x] 대시보드 데이터 정확
+- [x] CSV 내보내기 정상
 
 ---
 
@@ -1091,16 +1091,16 @@ curl http://localhost:3000/api/dashboard
 ```
 
 **Testing Checklist:**
-- [ ] 시나리오 1: 전체 플로우 정상
-- [ ] 시나리오 2: 정원 초과 → 대기자 → 전환 정상
-- [ ] 시나리오 3: 보강 플로우 정상
-- [ ] 시나리오 4: 환불 플로우 정상
-- [ ] 시나리오 5: 대시보드 정합성 확인
+- [x] 시나리오 1: 전체 플로우 정상
+- [x] 시나리오 2: 정원 초과 → 대기자 → 전환 정상
+- [x] 시나리오 3: 보강 플로우 정상
+- [x] 시나리오 4: 환불 플로우 정상
+- [x] 시나리오 5: 대시보드 정합성 확인
 
 **Acceptance Criteria:**
-- [ ] 59개 API 전체 정상 동작
-- [ ] 모든 비즈니스 규칙 검증 완료
-- [ ] 데이터 정합성 확인 완료
+- [x] 59개 API 전체 정상 동작
+- [x] 모든 비즈니스 규칙 검증 완료
+- [x] 데이터 정합성 확인 완료
 
 ---
 
