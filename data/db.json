@@ -1,28 +1,36 @@
 {
   "students": [
     {
-      "id": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
-      "name": "���л�",
-      "phone": "010-9999-8888",
-      "levelId": "level-1",
-      "status": "active",
-      "enrollDate": "2026-02-02",
-      "createdAt": "2026-02-02T07:23:51.183Z"
-    },
-    {
       "id": "010f4177-36fd-483e-91b2-4a654271f6a3",
-      "name": "�����׽�Ʈ",
+      "name": "통합테스트",
       "phone": "010-0000-0000",
       "levelId": "level-1",
       "status": "active",
       "enrollDate": "2026-02-02",
-      "createdAt": "2026-02-02T08:27:10.849Z"
+      "createdAt": "2026-02-02T08:27:10.849Z",
+      "parentPhone": "",
+      "sourceId": "src-1",
+      "notes": "통합테스트랜다"
+    },
+    {
+      "id": "a2e695df-92da-48a1-800e-13ae70ffe604",
+      "name": "김철우",
+      "phone": "01088569915",
+      "parentPhone": "01023000056",
+      "email": "steel@gmail.com",
+      "birthDate": "2026-01-11",
+      "levelId": "level-1",
+      "sourceId": "src-1",
+      "status": "active",
+      "enrollDate": "2026-02-03",
+      "notes": "강철대가리",
+      "createdAt": "2026-02-03T01:24:03.838Z"
     }
   ],
   "instructors": [
     {
       "id": "506279a5-c7ef-4aad-9094-895e61b0efb3",
-      "name": "�ڼ���",
+      "name": "김선생",
       "phone": "010-1111-2222",
       "subjectIds": [
         "subj-1"
@@ -30,14 +38,41 @@
       "monthlySalary": 3000000,
       "status": "active",
       "createdAt": "2026-02-02T07:09:27.794Z"
+    },
+    {
+      "id": "3a809252-ead9-47b3-a46d-eed5078a72d6",
+      "name": "김동우",
+      "phone": "01023000007",
+      "email": "dong@gmail.com",
+      "subjectIds": [
+        "subj-1"
+      ],
+      "monthlySalary": 4500000,
+      "status": "active",
+      "notes": "영국식 영어발음.",
+      "createdAt": "2026-02-03T01:08:13.916Z"
+    },
+    {
+      "id": "b947f4af-c0ab-44a9-bea9-bb95b461a085",
+      "name": "김금우",
+      "phone": "01025688875",
+      "email": "gold@gmail.com",
+      "subjectIds": [
+        "subj-2"
+      ],
+      "monthlySalary": 4600000,
+      "status": "active",
+      "notes": "편미분의 대가",
+      "createdAt": "2026-02-03T01:08:46.314Z"
     }
   ],
   "classes": [
     {
       "id": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "name": "�׽�Ʈ��",
+      "name": "테스트반",
       "subjectId": "subj-1",
       "instructorId": "506279a5-c7ef-4aad-9094-895e61b0efb3",
+      "roomId": "room-1",
       "maxStudents": 10,
       "schedule": [
         {
@@ -48,48 +83,91 @@
       ],
       "monthlyFee": 200000,
       "status": "active",
-      "createdAt": "2026-02-02T07:35:12.574Z"
+      "createdAt": "2026-02-02T07:09:47.921Z"
     },
     {
       "id": "ec8c2cf8-5d8c-442b-bd0a-6a797437ecd5",
-      "name": "�Ҽ�������",
-      "subjectId": "subj-1",
-      "instructorId": "506279a5-c7ef-4aad-9094-895e61b0efb3",
+      "name": "소수정예반",
+      "subjectId": "subj-2",
+      "instructorId": "3a809252-ead9-47b3-a46d-eed5078a72d6",
+      "roomId": "room-2",
       "maxStudents": 1,
       "schedule": [
         {
           "dayOfWeek": 2,
-          "startTime": "16:00",
-          "endTime": "17:00"
+          "startTime": "15:00",
+          "endTime": "16:00"
         }
       ],
       "monthlyFee": 300000,
       "status": "active",
-      "createdAt": "2026-02-02T08:27:44.029Z"
+      "createdAt": "2026-02-02T08:29:30.123Z"
+    },
+    {
+      "id": "4e34775f-d08c-48c2-8399-ad83255952c5",
+      "name": "고등 3학년 수학",
+      "subjectId": "subj-2",
+      "instructorId": "3a809252-ead9-47b3-a46d-eed5078a72d6",
+      "maxStudents": 10,
+      "schedule": [
+        {
+          "dayOfWeek": 1,
+          "startTime": "09:00",
+          "endTime": "10:00"
+        },
+        {
+          "dayOfWeek": 2,
+          "startTime": "09:00",
+          "endTime": "10:00"
+        },
+        {
+          "dayOfWeek": 3,
+          "startTime": "09:00",
+          "endTime": "10:00"
+        },
+        {
+          "dayOfWeek": 4,
+          "startTime": "09:00",
+          "endTime": "10:00"
+        },
+        {
+          "dayOfWeek": 5,
+          "startTime": "09:00",
+          "endTime": "10:00"
+        }
+      ],
+      "monthlyFee": 150000,
+      "status": "active",
+      "roomId": "room-2",
+      "createdAt": "2026-02-03T02:40:53.433Z"
+    },
+    {
+      "id": "5194290b-47c7-4e9f-aba6-98147191cc80",
+      "name": "고등 2반",
+      "subjectId": "subj-1",
+      "instructorId": "3a809252-ead9-47b3-a46d-eed5078a72d6",
+      "maxStudents": 10,
+      "schedule": [
+        {
+          "dayOfWeek": 6,
+          "startTime": "09:00",
+          "endTime": "10:00"
+        }
+      ],
+      "monthlyFee": 0,
+      "status": "active",
+      "roomId": "",
+      "createdAt": "2026-02-03T02:49:09.756Z"
     }
   ],
   "enrollments": [
-    {
-      "id": "7663b8e0-f1b7-417a-aae6-aae31ec6469d",
-      "studentId": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
-      "classId": "492225d6-40ad-40db-b27d-6dd7c0b902ff",
-      "enrollDate": "2026-02-02",
-      "status": "dropped",
-      "droppedDate": "2026-02-02"
-    },
-    {
-      "id": "27a37e49-b95a-46f6-aa0f-252af664cdaa",
-      "studentId": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
-      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "enrollDate": "2026-02-02",
-      "status": "active"
-    },
     {
       "id": "d97991de-f05b-4853-becd-36838c2ea275",
       "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
       "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
       "enrollDate": "2026-02-02",
-      "status": "active"
+      "status": "active",
+      "createdAt": "2026-02-02T08:27:18.234Z"
     },
     {
       "id": "b169dc28-9dd7-420d-914d-7dafe909b6a8",
@@ -97,78 +175,56 @@
       "classId": "ec8c2cf8-5d8c-442b-bd0a-6a797437ecd5",
       "enrollDate": "2026-02-02",
       "status": "dropped",
-      "droppedDate": "2026-02-02"
+      "createdAt": "2026-02-02T08:29:45.678Z"
     },
     {
       "id": "85717601-cf61-43a4-a142-7e27e1cf9088",
       "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
       "classId": "ec8c2cf8-5d8c-442b-bd0a-6a797437ecd5",
       "enrollDate": "2026-02-02",
+      "status": "active",
+      "createdAt": "2026-02-02T08:32:15.891Z"
+    },
+    {
+      "id": "ff2e83ac-537a-4a3c-bfb3-480611f6cb24",
+      "studentId": "a2e695df-92da-48a1-800e-13ae70ffe604",
+      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
+      "enrollDate": "2026-02-03",
+      "status": "active"
+    },
+    {
+      "id": "f95293aa-5948-4ff4-ba20-3209e9693d27",
+      "studentId": "a2e695df-92da-48a1-800e-13ae70ffe604",
+      "classId": "5194290b-47c7-4e9f-aba6-98147191cc80",
+      "enrollDate": "2026-02-03",
+      "status": "active"
+    },
+    {
+      "id": "dcd1ba60-47af-4a0d-88e8-011adbb59e4f",
+      "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
+      "classId": "5194290b-47c7-4e9f-aba6-98147191cc80",
+      "enrollDate": "2026-02-03",
       "status": "active"
     }
   ],
   "attendances": [
     {
-      "id": "dfa80695-b544-4e4f-900d-c80d16f2ffcb",
-      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "studentId": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
-      "date": "2026-02-03",
-      "status": "late",
-      "notes": "10�� ����"
-    },
-    {
-      "id": "fcbe595a-0ffc-4681-a50b-73e898edeec8",
-      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "studentId": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
-      "date": "2026-02-04",
-      "status": "absent",
-      "notes": "����"
-    },
-    {
-      "id": "f649922b-b7b3-4eb1-a044-1452c0c89e2b",
-      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
+      "id": "att-001",
+      "enrollmentId": "d97991de-f05b-4853-becd-36838c2ea275",
       "date": "2026-02-10",
-      "status": "present"
+      "status": "present",
+      "createdAt": "2026-02-02T08:27:45.123Z"
     },
     {
-      "id": "1e567af6-1da5-43f9-b2d3-d882adeb2368",
-      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
+      "id": "att-002",
+      "enrollmentId": "d97991de-f05b-4853-becd-36838c2ea275",
       "date": "2026-02-23",
       "status": "absent",
-      "notes": "���� �׽�Ʈ"
+      "note": "보강 테스트",
+      "createdAt": "2026-02-02T08:35:20.456Z"
     }
   ],
   "payments": [
-    {
-      "id": "08579b0f-4686-48ab-8695-ef76727465f3",
-      "studentId": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
-      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "amount": 200000,
-      "paidAmount": 200000,
-      "month": "2026-02",
-      "status": "paid",
-      "isProrated": false,
-      "notes": "2�� ������",
-      "createdAt": "2026-02-02T07:48:31.881Z",
-      "paidDate": "2026-02-02",
-      "method": "card"
-    },
-    {
-      "id": "6e10e9ee-c8a1-4c1b-b60e-de719deb2e6b",
-      "studentId": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
-      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "amount": 200000,
-      "paidAmount": 100000,
-      "month": "2026-03",
-      "status": "partial",
-      "isProrated": false,
-      "notes": "3�� ������",
-      "createdAt": "2026-02-02T07:49:23.506Z",
-      "paidDate": "2026-02-02",
-      "method": "cash"
-    },
     {
       "id": "203587ac-8305-4277-8354-73381a5925e3",
       "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
@@ -177,221 +233,171 @@
       "paidAmount": 200000,
       "month": "2026-02",
       "status": "paid",
-      "isProrated": false,
-      "createdAt": "2026-02-02T08:27:26.683Z",
       "paidDate": "2026-02-02",
+      "method": "card",
+      "isProrated": false,
+      "createdAt": "2026-02-02T08:27:55.234Z"
+    },
+    {
+      "id": "pay-002",
+      "studentId": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
+      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
+      "amount": 200000,
+      "paidAmount": 200000,
+      "month": "2026-02",
+      "status": "paid",
+      "paidDate": "2026-02-02",
+      "method": "cash",
+      "isProrated": false,
+      "createdAt": "2026-02-02T07:30:00.000Z"
+    },
+    {
+      "id": "299978c2-e10f-4d14-878d-ec7ddd29e380",
+      "studentId": "a2e695df-92da-48a1-800e-13ae70ffe604",
+      "classId": "ec8c2cf8-5d8c-442b-bd0a-6a797437ecd5",
+      "amount": 300000,
+      "paidAmount": 300000,
+      "month": "2026-03",
+      "status": "paid",
+      "isProrated": false,
+      "createdAt": "2026-02-03T07:30:37.430Z",
+      "paidDate": "2026-02-03",
       "method": "card"
+    },
+    {
+      "id": "bc4bffdc-d442-4556-bdb3-43021a7dcacb",
+      "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
+      "classId": "ec8c2cf8-5d8c-442b-bd0a-6a797437ecd5",
+      "amount": 180000,
+      "paidAmount": 90000,
+      "month": "2026-04",
+      "status": "partial",
+      "isProrated": true,
+      "notes": "2026-03-15 ���, ���Ұ�� ����",
+      "createdAt": "2026-02-03T07:31:23.885Z",
+      "paidDate": "2026-02-03",
+      "method": "cash"
+    },
+    {
+      "id": "180ab301-3fde-44c0-97cf-b107ddc6d5aa",
+      "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
+      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
+      "amount": 200000,
+      "paidAmount": 0,
+      "month": "2026-05",
+      "status": "unpaid",
+      "isProrated": false,
+      "createdAt": "2026-02-03T07:33:37.872Z"
+    },
+    {
+      "id": "7e64b423-9f6d-484e-baaa-6bd253caa237",
+      "studentId": "a2e695df-92da-48a1-800e-13ae70ffe604",
+      "classId": "ec8c2cf8-5d8c-442b-bd0a-6a797437ecd5",
+      "amount": 300000,
+      "paidAmount": 0,
+      "month": "2026-06",
+      "status": "unpaid",
+      "isProrated": false,
+      "createdAt": "2026-02-03T07:51:21.124Z"
     }
   ],
   "consultations": [],
   "makeupClasses": [
     {
-      "id": "691ff058-2433-4b9a-ab8c-030411820c98",
-      "enrollmentId": "27a37e49-b95a-46f6-aa0f-252af664cdaa",
-      "absenceDate": "2026-02-04",
-      "scheduledDate": "2026-02-05",
-      "scheduledTime": "15:00",
-      "status": "completed",
-      "createdAt": "2026-02-02T07:36:19.597Z"
-    },
-    {
       "id": "4ff54f07-f8d0-4408-bace-0154babcfc40",
       "enrollmentId": "d97991de-f05b-4853-becd-36838c2ea275",
-      "absenceDate": "2026-02-23",
-      "scheduledDate": "2026-02-25",
-      "scheduledTime": "15:00",
+      "originalDate": "2026-02-23",
+      "makeupDate": "2026-02-25",
+      "makeupTime": "15:00",
       "status": "completed",
-      "createdAt": "2026-02-02T08:28:24.299Z"
+      "createdAt": "2026-02-02T08:36:10.789Z"
     }
   ],
   "waitlists": [
     {
-      "id": "4a7e6d67-ed27-422f-858e-c5bcf7f7c00e",
-      "studentId": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
-      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "registeredAt": "2026-02-02T08:09:21.149Z",
+      "id": "b30fc4a6-c5fd-4d67-ba38-0cceab63f0f9",
+      "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
+      "classId": "ec8c2cf8-5d8c-442b-bd0a-6a797437ecd5",
+      "registeredAt": "2026-02-02T08:30:45.234Z",
       "priority": 1,
-      "status": "cancelled"
+      "status": "enrolled"
     },
     {
-      "id": "2e65c127-cd32-4a4b-b2d1-3c3cd6836c97",
-      "studentId": "ac9fd4c3-0c9d-4315-95a0-4fd104dfd0aa",
-      "classId": "8a2e75e3-db34-44b1-bb7e-a1c8f6b42b0f",
-      "registeredAt": "2026-02-02T08:09:39.953Z",
+      "id": "1b1e3127-00b2-43fb-886d-50b90e83d0e4",
+      "studentId": "a2e695df-92da-48a1-800e-13ae70ffe604",
+      "classId": "ec8c2cf8-5d8c-442b-bd0a-6a797437ecd5",
+      "registeredAt": "2026-02-03T01:58:30.236Z",
       "priority": 1,
       "status": "waiting"
     },
     {
-      "id": "b30fc4a6-c5fd-4d67-ba38-0cceab63f0f9",
-      "studentId": "010f4177-36fd-483e-91b2-4a654271f6a3",
+      "id": "85b285f1-b004-45db-87a7-85d60a637d9a",
+      "studentId": "a2e695df-92da-48a1-800e-13ae70ffe604",
       "classId": "ec8c2cf8-5d8c-442b-bd0a-6a797437ecd5",
-      "registeredAt": "2026-02-02T08:27:53.136Z",
-      "priority": 1,
-      "status": "enrolled",
-      "enrolledAt": "2026-02-02T08:28:03.811Z"
+      "registeredAt": "2026-02-03T02:51:54.923Z",
+      "priority": 2,
+      "status": "waiting"
     }
   ],
   "instructorSalaries": [
     {
-      "id": "6b770e3e-f50a-4b05-b82d-f36b06ce09fd",
-      "instructorId": "506279a5-c7ef-4aad-9094-895e61b0efb3",
+      "id": "df889933-6932-4250-9ab5-3646a62a140b",
+      "instructorId": "b947f4af-c0ab-44a9-bea9-bb95b461a085",
       "month": "2026-02",
-      "amount": 3000000,
+      "amount": 4285600,
       "status": "paid",
-      "createdAt": "2026-02-02T07:09:35.090Z",
-      "paidDate": "2026-02-02"
+      "createdAt": "2026-02-03T01:09:07.564Z",
+      "paidDate": "2026-02-03"
+    },
+    {
+      "id": "18d85718-aff7-4d50-99ea-d5bb6509674d",
+      "instructorId": "3a809252-ead9-47b3-a46d-eed5078a72d6",
+      "month": "2026-02",
+      "amount": 4325600,
+      "status": "paid",
+      "createdAt": "2026-02-03T01:11:54.706Z",
+      "paidDate": "2026-02-03"
     }
   ],
   "holidays": [
     {
-      "id": "hol-test",
-      "date": "2026-03-01",
-      "name": "삼일절",
+      "id": "holiday-001",
+      "name": "설날",
+      "date": "2026-02-17",
       "type": "public",
       "createdAt": "2026-02-02T07:00:00.000Z"
-    },
-    {
-      "id": "1173f201-99fd-4b4e-842b-fc919174ad6b",
-      "date": "2026-01-01",
-      "name": "신정",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "110454fb-7953-4172-8402-2ac6a77c1d5e",
-      "date": "2026-02-16",
-      "name": "설날 연휴",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "b0a9acc7-9dec-4a4b-bda9-3b40c55e3e66",
-      "date": "2026-02-17",
-      "name": "설날",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "72476735-48b5-47d7-94d7-addcdbd49f18",
-      "date": "2026-02-18",
-      "name": "설날 연휴",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "78e7db9e-5401-43dc-b5ac-2ee388f26193",
-      "date": "2026-03-02",
-      "name": "대체공휴일",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "66e8d0a3-e112-488a-bc09-cbd461d5e2a2",
-      "date": "2026-05-05",
-      "name": "어린이날",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "8a9b3a45-2c65-4a05-8614-41674e0efe51",
-      "date": "2026-05-24",
-      "name": "부처님오신날",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "9c8acf0a-de82-44ee-a6b3-e575b7d54d0e",
-      "date": "2026-06-06",
-      "name": "현충일",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "d0d2a81c-4281-4c2e-85d0-2f8f13580a8f",
-      "date": "2026-08-15",
-      "name": "광복절",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "7f358eaf-67ae-467c-85e4-6ada1bbe4f2d",
-      "date": "2026-08-17",
-      "name": "대체공휴일",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "106e60d7-0afb-4d3d-bad1-cd15b48e996b",
-      "date": "2026-09-24",
-      "name": "추석 연휴",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "5dab1419-9b6b-4bcc-9d26-18953473755d",
-      "date": "2026-09-25",
-      "name": "추석",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "2906c8fe-b0ef-469c-a815-3240b05d19fe",
-      "date": "2026-09-26",
-      "name": "추석 연휴",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.807Z"
-    },
-    {
-      "id": "bdc5789f-3e28-4349-9b5e-aced1b053d74",
-      "date": "2026-10-03",
-      "name": "개천절",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.808Z"
-    },
-    {
-      "id": "a3b1759b-bb9c-47c2-8663-31fb33b31ae8",
-      "date": "2026-10-05",
-      "name": "대체공휴일",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.808Z"
-    },
-    {
-      "id": "15edb00e-3dbd-47cb-bf60-c4feefb7ead0",
-      "date": "2026-10-09",
-      "name": "한글날",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.808Z"
-    },
-    {
-      "id": "c632bbbf-fb99-489e-9b6d-40bfa761a661",
-      "date": "2026-12-25",
-      "name": "성탄절",
-      "type": "public",
-      "createdAt": "2026-02-02T07:58:17.808Z"
     }
   ],
   "refunds": [
     {
-      "id": "20339326-51d4-477c-8af0-9e9c92a3df60",
-      "paymentId": "08579b0f-4686-48ab-8695-ef76727465f3",
-      "amount": 50000,
-      "reason": "�κ� ȯ�� �׽�Ʈ",
-      "refundDate": "2026-02-02",
-      "createdAt": "2026-02-02T07:49:40.501Z"
-    },
-    {
       "id": "950b2e70-ad78-4f7a-b7d3-d15cfc2425e8",
       "paymentId": "203587ac-8305-4277-8354-73381a5925e3",
       "amount": 50000,
-      "reason": "�κ� ȯ�� �׽�Ʈ",
+      "reason": "부분 환불 테스트",
       "refundDate": "2026-02-02",
-      "createdAt": "2026-02-02T08:28:39.437Z"
+      "createdAt": "2026-02-02T08:39:30.123Z"
+    },
+    {
+      "id": "aa5c9060-842f-4080-9226-ac471ac36f7c",
+      "paymentId": "299978c2-e10f-4d14-878d-ec7ddd29e380",
+      "amount": 50000,
+      "reason": "�κ� ȯ�� ��û",
+      "refundDate": "2026-02-03",
+      "createdAt": "2026-02-03T07:32:31.002Z"
+    },
+    {
+      "id": "910c2408-16de-4f18-ae89-caf5502d00a0",
+      "paymentId": "299978c2-e10f-4d14-878d-ec7ddd29e380",
+      "amount": 260000,
+      "reason": "ȯ�� �ʰ� �׽�Ʈ",
+      "refundDate": "2026-02-03",
+      "createdAt": "2026-02-03T07:32:40.306Z"
     }
   ],
   "settings": {
-    "academyName": "�׽�Ʈ�п�",
-    "phone": "02-1234-5678",
-    "address": "",
+    "academyName": "심영학원",
+    "phone": "028778157",
+    "address": "서울시 관악구 신림동",
     "operatingHours": {
       "start": "09:00",
       "end": "22:00"
@@ -399,43 +405,48 @@
     "levels": [
       {
         "id": "level-1",
-        "name": "�ʱ�",
+        "name": "초급",
         "order": 1
       },
       {
         "id": "level-2",
-        "name": "�߱�",
+        "name": "중급",
         "order": 2
+      },
+      {
+        "id": "level-3",
+        "name": "고급",
+        "order": 3
       }
     ],
     "subjects": [
       {
         "id": "subj-1",
-        "name": "����"
+        "name": "영어"
       },
       {
         "id": "subj-2",
-        "name": "����"
+        "name": "수학"
       }
     ],
     "rooms": [
       {
         "id": "room-1",
-        "name": "101ȣ"
+        "name": "101호"
       },
       {
         "id": "room-2",
-        "name": "102ȣ"
+        "name": "102호"
       }
     ],
     "sources": [
       {
         "id": "src-1",
-        "name": "���μҰ�"
+        "name": "지인소개"
       },
       {
         "id": "src-2",
-        "name": "�¶��α���"
+        "name": "온라인광고"
       }
     ]
   }

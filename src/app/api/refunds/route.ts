@@ -113,10 +113,15 @@ export async function POST(
       );
     }
 
-    // Check if refund amount exceeds paid amount
-    if (data.amount > payment.paidAmount) {
+    // Calculate total existing refunds for this payment
+    const existingRefunds = db.refunds.filter((r) => r.paymentId === data.paymentId);
+    const totalRefunded = existingRefunds.reduce((sum, r) => sum + r.amount, 0);
+    const remainingAmount = payment.paidAmount - totalRefunded;
+
+    // Check if refund amount exceeds remaining amount
+    if (data.amount > remainingAmount) {
       return errorResponse(
-        '환불 금액이 납부 금액을 초과합니다.',
+        `환불 가능 금액은 ${remainingAmount.toLocaleString()}원입니다. (납부: ${payment.paidAmount.toLocaleString()}원, 기환불: ${totalRefunded.toLocaleString()}원)`,
         'REFUND_AMOUNT_EXCEEDS',
         400
       );

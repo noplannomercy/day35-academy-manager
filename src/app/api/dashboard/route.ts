@@ -15,6 +15,7 @@ import { readDatabase } from '@/lib/storage';
  * - unpaidList: 미납/연체 목록
  * - todaySchedule: 오늘 수업 일정
  * - todayReminders: 오늘/지난 상담 리마인더
+ * - recentConsultations: 최근 상담 기록 (5건)
  * - enrollmentTrend: 최근 6개월 수강 추이
  */
 export async function GET(): Promise<NextResponse> {
@@ -103,7 +104,23 @@ export async function GET(): Promise<NextResponse> {
         };
       });
 
-    // 9. Enrollment trend (last 6 months)
+    // 9. Recent consultations (last 5)
+    const recentConsultations = db.consultations
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+      .slice(0, 5)
+      .map(c => {
+        const student = db.students.find(s => s.id === c.studentId);
+        return {
+          id: c.id,
+          studentId: c.studentId,
+          studentName: student?.name || 'Unknown',
+          date: c.date,
+          type: c.type,
+          content: c.content,
+        };
+      });
+
+    // 10. Enrollment trend (last 6 months)
     const enrollmentTrend: Array<{ month: string; count: number }> = [];
     for (let i = 5; i >= 0; i--) {
       const targetDate = new Date(now.getFullYear(), now.getMonth() - i, 1);
@@ -127,6 +144,7 @@ export async function GET(): Promise<NextResponse> {
         unpaidList: unpaidPayments,
         todaySchedule,
         todayReminders,
+        recentConsultations,
         enrollmentTrend,
       },
     });
